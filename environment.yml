@@ -1,0 +1,18 @@
+# Pasang: mamba env create -f environment.yml  lalu  conda activate dockingku
+name: dockingku
+channels: [conda-forge]
+dependencies:
+  - python=3.11
+  - rdkit
+  - openbabel
+  - vina            # AutoDock Vina 1.2 (binding Python)
+  - meeko           # persiapan PDBQT ligan dan reseptor
+  - pdbfixer        # membersihkan protein (pengganti BIOVIA)
+  - openmm
+  - plip            # profil interaksi protein-ligan
+  - fastapi
+  - uvicorn
+  - httpx
+  - pywebview
+  - pytest
+  # Opsional: openjdk=17 untuk P2Rank lokal

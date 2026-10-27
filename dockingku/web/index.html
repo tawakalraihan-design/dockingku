@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DockingKu</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/molstar@4.5.0/build/viewer/molstar.css">
+<link rel="stylesheet" href="/web/style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand">DockingKu</div>
+  <div class="greet">Selamat datang, Tuan Raihan</div>
+  <button class="pill" id="btn-new">Proyek baru</button>
+</header>
+
+<section class="hero">
+  <h1>Dari target sampai skor, dalam satu tempat.</h1>
+  <p>RCSB, PubChem, KNApSAcK, P2Rank, AutoDock Vina, PLIP, ADMET, KEGG, dan RMSD dalam satu alur.</p>
+</section>
+
+<main class="layout">
+  <nav class="steps" id="steps"></nav>
+  <section class="panel">
+    <div class="card" id="step-panel">
+      <h2 id="step-title">Pilih langkah</h2>
+      <div id="step-body" class="muted">Langkah aktif akan tampil di sini.</div>
+    </div>
+    <div class="card viewer-card">
+      <div id="viewer"></div>
+    </div>
+  </section>
+  <aside class="card status">
+    <h3>Status modul</h3>
+    <ul id="modules"></ul>
+  </aside>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/molstar@4.5.0/build/viewer/molstar.js"></script>
+<script src="/web/app.js"></script>
+</body>
+</html>

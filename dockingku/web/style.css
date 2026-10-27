@@ -1,0 +1,25 @@
+/* Gaya Lovable: krem, kartu datar, tombol pil hitam, gradasi hanya di hero */
+:root { --bg: #f7f4ed; --card: #fcfbf8; --ink: #1c1c1c; --muted: #6b6b6b; --line: #e7e2d6; --ok: #2f7d4f; --warn: #b5651d; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.5 "Inter", system-ui, sans-serif; }
+.top { display: flex; align-items: center; gap: 16px; padding: 14px 28px; border-bottom: 1px solid var(--line); }
+.brand { font-weight: 700; font-size: 18px; }
+.greet { color: var(--muted); margin-right: auto; }
+.pill { background: var(--ink); color: #fff; border: 0; border-radius: 999px; padding: 9px 18px; font-weight: 600; cursor: pointer; }
+.hero { margin: 20px 28px; padding: 36px; border-radius: 20px; color: #fff;
+        background: linear-gradient(120deg, #ff8a65 0%, #e85d9a 45%, #6a5cff 100%); }
+.hero h1 { margin: 0 0 6px; font-size: 30px; } .hero p { margin: 0; opacity: .9; }
+.layout { display: grid; grid-template-columns: 240px 1fr 280px; gap: 16px; padding: 0 28px 28px; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 18px; }
+.steps { display: flex; flex-direction: column; gap: 6px; }
+.step { text-align: left; background: transparent; border: 1px solid transparent; border-radius: 12px; padding: 10px 12px; cursor: pointer; font: inherit; color: var(--ink); }
+.step:hover, .step.active { background: var(--card); border-color: var(--line); }
+.step small { display: block; color: var(--muted); }
+.panel { display: flex; flex-direction: column; gap: 16px; }
+.viewer-card { padding: 0; overflow: hidden; }
+#viewer { position: relative; height: 460px; }
+.muted { color: var(--muted); }
+.status ul { list-style: none; padding: 0; margin: 0; }
+.status li { padding: 8px 0; border-bottom: 1px solid var(--line); font-size: 14px; }
+.status .ok { color: var(--ok); } .status .warn { color: var(--warn); }
+@media (max-width: 1100px) { .layout { grid-template-columns: 1fr; } }

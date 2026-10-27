@@ -1,0 +1,41 @@
+{
+  "judul": "Evaluasi interaksi quercetin, curcumin, dan resveratrol terhadap COX-2 (PDB 5KIR)",
+  "sumber": "Laporan Project Molecular Docking Kelompok 3, Teknologi Kedokteran ITS, 2026",
+  "metode_asli": "PyRx + AutoDock Vina, BIOVIA Discovery Studio Visualizer",
+  "reseptor": {
+    "pdb_id": "5KIR",
+    "nama": "Cyclooxygenase-2 / Prostaglandin G/H synthase 2 (PTGS2), Homo sapiens",
+    "resolusi_A": 2.70,
+    "chain": "A",
+    "buang": ["air", "heme", "glikan", "ligan native"],
+    "ligan_kokristal": "RCX"
+  },
+  "kotak": {
+    "center": [23.003, 0.989, 33.998],
+    "size": [20.009, 20.011, 20.008],
+    "exhaustiveness": 8
+  },
+  "ligan": [
+    {"nama": "Rofecoxib", "peran": "kontrol", "cid": "5090",
+     "smiles": "CS(=O)(=O)c1ccc(cc1)C1=C(C(=O)OC1)c1ccccc1"},
+    {"nama": "Quercetin", "peran": "kandidat", "cid": "5280343",
+     "smiles": "O=c1c(O)c(-c2ccc(O)c(O)c2)oc2cc(O)cc(O)c12"},
+    {"nama": "Curcumin", "peran": "kandidat", "cid": "969516",
+     "smiles": "COc1cc(/C=C/C(=O)CC(=O)/C=C/c2ccc(O)c(OC)c2)ccc1O"},
+    {"nama": "Resveratrol", "peran": "kandidat", "cid": "445154",
+     "smiles": "Oc1ccc(/C=C/c2cc(O)cc(O)c2)cc1"}
+  ],
+  "residu_kunci": ["ARG513", "PHE518", "VAL523", "SER530", "SER353", "LEU352", "ALA527"],
+  "hasil_laporan": {
+    "redocking": {"afinitas": -9.8, "rmsd": 1.004, "batas_rmsd": 2.0},
+    "afinitas": {"Rofecoxib": -9.8, "Quercetin": -9.8, "Resveratrol": -8.9, "Curcumin": -8.0},
+    "residu_kunci_cocok": {"Quercetin": 3, "Curcumin": 6, "Resveratrol": 3},
+    "residu": {
+      "Rofecoxib": ["ARG513", "PHE518", "VAL523", "SER530", "SER353", "LEU352", "ALA527"],
+      "Quercetin": ["SER353", "VAL523", "LEU352", "VAL349", "GLN192"],
+      "Curcumin": ["ARG513", "PHE518", "VAL523", "SER530", "LEU352", "ALA527"],
+      "Resveratrol": ["ARG513", "VAL523", "LEU352", "VAL349"]
+    }
+  },
+  "toleransi": {"afinitas_kkal": 1.0, "catatan": "Vina stokastik; selisih <= 1 kkal/mol dan urutan peringkat dianggap konsisten"}
+}
