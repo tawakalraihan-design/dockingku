@@ -48,4 +48,11 @@ def available(info: ModuleInfo) -> dict:
 
 
 def status_all() -> list[dict]:
-    return [available(load(k).INFO) for k in REGISTRY]
+    rows = []
+    for key in REGISTRY:
+        mod = load(key)
+        row = available(mod.INFO)
+        if hasattr(mod, "check"):  # modul dengan lebih dari satu cara jalan menilai dirinya sendiri
+            row["missing"] += mod.check()
+        rows.append(row)
+    return rows

@@ -5,7 +5,6 @@ dependencies:
   - python=3.11
   - rdkit
   - openbabel
-  - vina            # AutoDock Vina 1.2 (binding Python)
   - meeko           # persiapan PDBQT ligan dan reseptor
   - pdbfixer        # membersihkan protein (pengganti BIOVIA)
   - openmm
@@ -15,4 +14,6 @@ dependencies:
   - httpx
   - pywebview
   - pytest
+  # Vina: di Windows pakai vina.exe resmi di tools\vina\vina.exe (lihat README);
+  #       di Linux/macOS boleh tambahkan paket `vina` dari conda-forge.
   # Opsional: openjdk=17 untuk P2Rank lokal

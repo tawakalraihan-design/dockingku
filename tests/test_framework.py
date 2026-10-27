@@ -37,3 +37,13 @@ def test_kotak_dari_ligan_kokristal(tmp_path: Path):
     pocket = from_ligand(lig, padding=8)
     assert pocket.box.center == (2.0, 1.0, 3.0)
     assert pocket.box.size == (20.0, 18.0, 22.0)
+
+
+def test_baca_skor_output_vina(tmp_path: Path):
+    from dockingku.modules.docking import parse_poses
+    out = tmp_path / "out.pdbqt"
+    out.write_text("MODEL 1\nREMARK VINA RESULT:    -9.812      0.000      0.000\nENDMDL\n"
+                   "MODEL 2\nREMARK VINA RESULT:    -9.100      1.532      2.101\nENDMDL\n")
+    poses = parse_poses(out)
+    assert [p.affinity for p in poses] == [-9.812, -9.1]
+    assert [p.rank for p in poses] == [1, 2]

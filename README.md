@@ -16,7 +16,10 @@ Rancangan lengkap ada di dokumen "Arsitektur Aplikasi Molecular Docking".
    conda activate dockingku
    python run.py
    ```
-3. Opsional, P2Rank untuk prediksi pocket: unduh dari https://github.com/rdk/p2rank/releases,
+3. AutoDock Vina untuk Windows: paket Python `vina` tidak tersedia untuk Windows, jadi unduh
+   `vina_1.2.x_win.exe` dari https://github.com/ccsb-scripps/AutoDock-Vina/releases, ganti namanya
+   jadi `vina.exe`, dan taruh di `tools\vina\vina.exe` di folder aplikasi.
+4. Opsional, P2Rank untuk prediksi pocket: unduh dari https://github.com/rdk/p2rank/releases,
    ekstrak ke folder `tools\p2rank` di dalam folder aplikasi, dan pasang Java 17.
 
 ## Status modul
